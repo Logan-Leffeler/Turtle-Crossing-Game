@@ -6,6 +6,7 @@ from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=600, height=600)
+screen.title("Turtle Crossing")
 screen.tracer(0)
 
 player = Player()
@@ -22,7 +23,7 @@ i = 0
 
 while game_is_on:
     time.sleep(0.1)
-    if i % 6 == 0:
+    if i % (6 - scoreboard.level) == 0:
         car_manager.create_car()
     for car in car_manager.car_list:
         car_manager.scroll(car)
